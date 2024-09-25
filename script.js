@@ -6,10 +6,9 @@ function select(el) {
 
 const list = select("ul");
 const input = select("input");
-const addButton = select("button.add-item");
 const button = select("button");
 
-addButton.addEventListener("click", function () {
+button.addEventListener("click", function () {
   const item = input.value;
   input.value = "";
 
