@@ -12,20 +12,21 @@ const button = select("button");
 addButton.addEventListener("click", function () {
   const item = input.value;
   input.value = "";
+
   const listItem = document.createElement("li");
   const listSpan = document.createElement("span");
   const listButton = document.createElement("button");
+
   listItem.appendChild(listSpan);
   listItem.appendChild(listButton);
+
   listSpan.textContent = item;
-  listButton.classList.add("delete");
   listButton.textContent = "Delete";
+
   list.appendChild(listItem);
-  input.focus();
-});
-list.addEventListener("click", function (e) {
-  e.target.classList.contains("delete")
-    ? e.target.parentElement.remove()
-    : null;
+
+  listButton.addEventListener("click", function () {
+    list.removeChild(listItem);
+  });
   input.focus();
 });
