@@ -21,9 +21,11 @@ addButton.addEventListener("click", function () {
   listButton.classList.add("delete");
   listButton.textContent = "Delete";
   list.appendChild(listItem);
+  input.focus();
 });
 list.addEventListener("click", function (e) {
   e.target.classList.contains("delete")
     ? e.target.parentElement.remove()
     : null;
+  input.focus();
 });
